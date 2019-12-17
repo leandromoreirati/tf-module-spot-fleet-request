@@ -11,6 +11,7 @@ Módulo Terraform para criação de requisição de frota spot (Spot Fleet Reque
 
 **Exemplo de Uso**
  ------
+ ```
 module "spot_fleet_request" {
   source = "https://github.com/leandromoreirati/tf-module-spot_fleet_request.git"
 
