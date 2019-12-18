@@ -29,12 +29,11 @@ module "spot_fleet_request" {
   terminate_instances_with_expiration = "${var.terminate_instances_with_expiration}" 
 
 
-  tags {
-    "Name"           = "${var.my_team}-${var.product}-${var.environment}"
-    "Application"    = "${var.my_team}-${var.product}"
-    "Environment"    = "${var.environment}"
-    "Service_type"   = "${var.service_type}"
-    "Business_owner" = "${var.business_owner}"
+  tags = {
+    "Tag01" = "Value01"
+    "Tag02" = "Value02"
+    "Tag03" = "Value03"
+    "Tag04" = "Value04"
   }
 }
 ```
