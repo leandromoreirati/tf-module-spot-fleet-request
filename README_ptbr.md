@@ -17,7 +17,7 @@ Módulo Terraform para criação de requisição de frota spot (Spot Fleet Reque
 module "spot_fleet_request" {
   source = "https://github.com/leandromoreirati/tf-module-spot_fleet_request.git"
 
-  name       = "${var.my_team}-${var.product}-${var.environment}"
+  name       = "RESOURCE_NAME"
 
   spot_price            = "${var.spot_price}"
   ami                   = "${var.ami}" 
