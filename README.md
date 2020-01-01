@@ -1,15 +1,17 @@
-# **tf-module-spot_fleet_request**
+![alt text](https://www.terraform.io/assets/images/logo-hashicorp-3f10732f.svg)
 
-Módulo Terraform para criação de requisição de frota spot (Spot Fleet Request).
+# ** tf-module-spot-fleet-request **
 
-  **Requisitos**
- - Terraform
- - AWS Account
+Terraform module for creation of spot fleet request (Spot Fleet Request).
+
+**Requirements**
+  - Terraform
+  - AWS Account
   
-**Dependências**
- - Não se aplica.
+**Dependencies**
+  - Not applicable.
 
-**Exemplo de Uso**
+**Example of use**
  ------
  ```
 module "spot_fleet_request" {
@@ -39,18 +41,18 @@ module "spot_fleet_request" {
 ```
  **Variáveis**
  ------
- |      Nome                          |                      Descrição                      |  Default  |
- | -----------------------------------|-----------------------------------------------------|-----------|
- | spot_price                         | Nome do bucket                                      |    ""     |
- | ami                                | Habilita o versionamento de arquivos no bucket      |   false   |
- | instance_type                      | Configura tags para o bucket S3                     |    ""     |
- | key_name                           | Habilita a criação de objetos no bucket S3          |   false   |
- | account_id                         | Caminho do arquivo a ser criado no bucket S3        |    ""     |
- | target_capacity                    | Arquivos que sera enviado para o bucket S3          |    ""     |
- | wait_for_fulfillment               | Caminho de destino do arquivo no bucket             |    ""     |
- | azs                                | Caminho de origem do arquivo que sera enviado ao S3 |    ""     |
- | instance_interruption_behaviour    | Caminho de origem do arquivo que sera enviado ao S3 |    ""     |
- | terminate_instances_with_expiration| Caminho de origem do arquivo que sera enviado ao S3 |    ""     |
+ |       Nome                         |                                             Descrição                                            |  Default     |
+ | -----------------------------------|--------------------------------------------------------------------------------------------------|:------------:|
+ | spot_price                         | The maximum bid price per unit hour                                                              |      ""      |
+ | ami                                | AMI ID                                                                                           |      ""      |
+ | instance_type                      | Instance Type EC2                                                                                |      ""      |
+ | key_name                           | Key Pair Name                                                                                    |      ""      |
+ | account_id                         | AWS Account ID                                                                                   |      ""      |
+ | target_capacity                    | The number of units to request                                                                   |      ""      |
+ | wait_for_fulfillment               | If set, Terraform will wait for the Spot Request to be fulfilled                                 |    "10m"     |
+ | azs                                | Availability Zone                                                                                |      ""      |
+ | instance_interruption_behaviour    | Indicates whether a Spot instance stops or terminates when it is interrupted                     |  "terminate" |
+ | terminate_instances_with_expiration| Indicates whether running Spot instances should be terminated when the Spot fleet request expires|      ""      |
 
  **Outputs**
  ------
@@ -59,10 +61,10 @@ module "spot_fleet_request" {
  | spot_fleet_request_id   | aws_spot_fleet_request.spot_fleet_request.id                |
  | spot_fleet_request_state| aws_spot_fleet_request.spot_fleet_request.spot_request_state|
 
- **Documentação externa**
+**External Documentation**
  - [Solicitação de Frota spot](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/spot-fleet-requests.html)
  - [Terraform Spot Fleet Request](https://www.terraform.io/docs/providers/aws/r/spot_fleet_request.html)
 
- **Recursos Criados**
- ------
- - Requisção de frota spot (Spot Fleet Request)
+  **Created Features**
+  ------
+  - Spot Fleet Request
